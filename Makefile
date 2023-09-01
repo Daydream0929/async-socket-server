@@ -6,11 +6,15 @@ LDFLAGS = -lpthread -pthread
 
 
 EXECUTABLES = \
-	sequential_server 
+	sequential_server \
+	thread_server
 
 all: $(EXECUTABLES)
 
 sequential_server: utils.c sequential_server.c
+	$(CC) $(CCFLAGS) $^ -o $@ $(LDFLAGS)
+
+thread_server: utils.c thread_server.c
 	$(CC) $(CCFLAGS) $^ -o $@ $(LDFLAGS)
 
 
