@@ -15,6 +15,14 @@
 
 #define N_BACKLOG 64
 
+void die(char* fmt, ...) {
+    va_list args;
+    va_start(args, fmt);
+    vfprintf(stderr, fmt, args);
+    va_end(args);
+    fprintf(stderr, "\n");
+    exit(EXIT_FAILURE);
+}
 
 void report_peer_connected(const struct sockaddr_in* sa, socklen_t salen) {
     char hostbuf[NI_MAXHOST];

@@ -8,6 +8,10 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 
+// Dies (exits with a failure status) after printing the given printf-like
+// message to stdout.
+void die(char* fmt, ...);
+
 // Reports a peer connection to stdout. sa is the data populated by a successful
 // accept() call.
 void report_peer_connected(const struct sockaddr_in* sa, socklen_t salen);
