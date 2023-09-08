@@ -1,12 +1,10 @@
 // Sequential socket server - accepting one client at a time.
 // This code is in the public domain.
 
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
-#include <sys/types.h>
 #include <unistd.h>
 
 #include "utils.h"
